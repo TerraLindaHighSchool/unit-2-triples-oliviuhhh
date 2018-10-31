@@ -17,88 +17,88 @@ public class CardTest {
 
     @Test
     public void getShape() {
-        Card[] tim = {new Card(Card.Shape.CIRCLE, Card.Color.BLUE, 2, 3, 4, 5 ),
+        Card[] card = {new Card(Card.Shape.CIRCLE, Card.Color.BLUE, 2, 3, 4, 5 ),
                 new Card(Card.Shape.SQUARE, Card.Color.BLUE, 2, 3, 4, 5),
                 new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 3, 4, 5),
                 new Card(Card.Shape.NO_SHAPE, Card.Color.BLUE, 2, 3, 4, 5)};
-        Card.Shape[] s = {Card.Shape.CIRCLE,Card.Shape.SQUARE, Card.Shape.TRIANGLE, Card.Shape.NO_SHAPE};
-        Card.Shape[] t = new Card.Shape[4];
-        for (int i = 0; i < tim.length; i++) {
-            t[i] = tim[i].getShape();
+        Card.Shape[] expectedValue = {Card.Shape.CIRCLE,Card.Shape.SQUARE, Card.Shape.TRIANGLE, Card.Shape.NO_SHAPE};
+        Card.Shape[] actualValue = new Card.Shape[4];
+        for (int i = 0; i < card.length; i++) {
+            actualValue[i] = card[i].getShape();
         }
-        assertArrayEquals(s, t);
+        assertArrayEquals(expectedValue, actualValue);
     }
 
     @Test
     public void getColor() {
-        Card[] tim = {new Card(Card.Shape.TRIANGLE, Card.Color.RED, 2, 3, 4, 5),
+        Card[] card = {new Card(Card.Shape.TRIANGLE, Card.Color.RED, 2, 3, 4, 5),
          new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 3, 4, 5),
          new Card(Card.Shape.TRIANGLE, Card.Color.GREEN, 2, 3, 4, 5),
          new Card(Card.Shape.TRIANGLE, Card.Color.NO_COLOR, 2, 3, 4, 5)};
-        Card.Color[] s = {Card.Color.RED, Card.Color.BLUE, Card.Color.GREEN, Card.Color.NO_COLOR};
-        Card.Color[] t = new Card.Color[4] ;
-        for (int i = 0; i < tim.length; i++) {
-             t[i] = tim[i].getColor();
+        Card.Color[] expectedValue = {Card.Color.RED, Card.Color.BLUE, Card.Color.GREEN, Card.Color.NO_COLOR};
+        Card.Color[] actualValue = new Card.Color[4] ;
+        for (int i = 0; i < card.length; i++) {
+            actualValue[i] = card[i].getColor();
         }
-        assertArrayEquals(s, t);
+        assertArrayEquals(expectedValue, actualValue);
     }
 
     @Test
     public void getAlpha() {
-        Card[] tim = {new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 0, 1, 4, 5),
+        Card[] card = {new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 0, 1, 4, 5),
                 new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 1, 1, 4, 5),
                 new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 1, 4, 5)};
-        int[] s = {0, 1, 2};
-        int[] t = new int [3];
-        for (int i = 0; i < tim.length; i++) {
-            t[i] = tim[i].getAlpha();
+        int[] expectedValue = {0, 1, 2};
+        int[] actualValue = new int [3];
+        for (int i = 0; i < card.length; i++) {
+            actualValue[i] = card[i].getAlpha();
         }
-        assertArrayEquals(s, t);
+        assertArrayEquals(expectedValue, actualValue);
     }
 
     @Test
     public void getImageID() {
-        Card tim = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 0, 1, R.drawable.circle_blue_1_0, 5);
-        int s = R.drawable.circle_blue_1_0;
-        int t = tim.getImageID();
-        assertTrue(s == t);
+        Card card = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 0, 1, R.drawable.circle_blue_1_0, 5);
+        int expectedValue = R.drawable.circle_blue_1_0;
+        int actualValue = card.getImageID();
+        assertTrue(expectedValue == actualValue);
     }
 
     @Test
     public void getSelectedImageID() {
-        Card tim = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 0, 1, 4, R.drawable.circle_blue_1_2);
-        int s = R.drawable.circle_blue_1_2;
-        int t = tim.getSelectedImageID();
-        assertTrue(s == t);
+        Card card = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 0, 1, 4, R.drawable.circle_blue_1_2);
+        int expectedValue = R.drawable.circle_blue_1_2;
+        int actualValue = card.getSelectedImageID();
+        assertTrue(expectedValue == actualValue);
     }
 
 
     @Test
     public void getIsSelected() {
-        Card tim = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 3, 4, 5);
-        boolean s = false;
-        boolean t = tim.getIsSelected();
-        assertTrue(s == t);
+        Card card = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 3, 4, 5);
+        boolean expectedValue = false;
+        boolean actualValue = card.getIsSelected();
+        assertTrue(expectedValue == actualValue);
     }
 
     @Test
-    public void setIsSelected() {  Card tim = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 3, 4, 5);
-        tim.setIsSelected(true);
-        boolean t = tim.getIsSelected();
-        assertTrue(t == true);
+    public void setIsSelected() {  Card card = new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 3, 4, 5);
+        card.setIsSelected(true);
+        boolean actualValue = card.getIsSelected();
+        assertTrue(actualValue == true);
     }
 
     @Test
     public void getNum()  {
-        Card[] tim = {new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 1, 4, 5),
+        Card[] card = {new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 1, 4, 5),
                 new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 2, 4, 5),
                 new Card(Card.Shape.TRIANGLE, Card.Color.BLUE, 2, 3, 4, 5)};
-        int[] s = {1, 2, 3};
-        int[] t = new int[3];
-        for (int i = 0; i < tim.length; i++) {
-            t[i] = tim[i].getNum();
+        int[] expectedValue = {1, 2, 3};
+        int[] actualValue = new int[3];
+        for (int i = 0; i < card.length; i++) {
+            actualValue[i] = card[i].getNum();
         }
-        assertArrayEquals(s, t);
+        assertArrayEquals(expectedValue, actualValue);
 
     }
 
