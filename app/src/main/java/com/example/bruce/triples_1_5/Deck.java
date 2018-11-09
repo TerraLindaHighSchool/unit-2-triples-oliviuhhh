@@ -15,12 +15,10 @@ import java.util.Random;
 public class Deck {
     private Card[] mOrderedDeck;
     private ArrayList<Card> mShuffledDeck;
-    private int mNumCardsInDeck;
-    private Card mTopCard;
-    private Card mCard;
 
     Deck(int numOfCardsInDeck) {
         mOrderedDeck = new Card[numOfCardsInDeck + 1];
+        mShuffledDeck = new ArrayList<>();
         populateOrderedDeckWithCards(numOfCardsInDeck);
         createShuffledDeck();
     }
@@ -30,7 +28,7 @@ public class Deck {
      **************************************************/
 
     public int getNumCardsInDeck() {
-        return mNumCardsInDeck;
+        return mShuffledDeck.size();
     }
 
     public Card getTopCard() {
@@ -41,7 +39,7 @@ public class Deck {
     }
 
     public Card getCard(int index) {
-        return mCard;
+        return mShuffledDeck.get(index);
     }
 
 
