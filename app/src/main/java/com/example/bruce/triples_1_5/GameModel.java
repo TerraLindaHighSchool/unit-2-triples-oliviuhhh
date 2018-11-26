@@ -1,5 +1,3 @@
-
-
 package com.example.bruce.triples_1_5;
 
 import android.content.Context;
@@ -115,9 +113,21 @@ public class GameModel {
         return isTriple;
     }
 
-    //protected boolean playIsPossible(){
-    //   for (i = 0;   )
-    //       return true;
+    protected boolean playIsPossible() {
+        boolean truth = false;
+        for (int i = 0; i < mCardOnBoard.size(); i++) {
+            if (getCardOnBoard(i).getShape() == Card.Shape.NO_SHAPE) continue;
+            for (int r = i + 1; r < mCardOnBoard.size(); r++) {
+                if (getCardOnBoard(r).getShape() == Card.Shape.NO_SHAPE) continue;
+                for (int t = r + 1; t < mCardOnBoard.size(); t++) {
+                    if (getCardOnBoard(t).getShape() == Card.Shape.NO_SHAPE) continue;
+                    if (isTriple(i, r, t)) truth = true;
+                }
+            }
+        }
+        return truth;
+    }
+
     //}
 
     protected String getGameOverMessage(Context context){
